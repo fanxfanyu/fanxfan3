@@ -1,0 +1,14 @@
+spring:
+    neo4j:
+        uri: neo4j://localhost:7687
+        authentication:
+            username: neo4j
+            password: fanxfan@1998
+        connection-timeout: 30s
+        max-transaction-retry-time: 30s
+
+
+    data:
+        neo4j:
+            repositories:
+                type: auto

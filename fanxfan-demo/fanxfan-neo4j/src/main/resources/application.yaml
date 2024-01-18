@@ -1,0 +1,10 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: fanxfan-neo4j
+    devtools:
+        add-properties: false
+    profiles:
+        active: dev

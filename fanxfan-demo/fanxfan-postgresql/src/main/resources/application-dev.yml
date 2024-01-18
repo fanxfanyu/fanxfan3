@@ -1,0 +1,19 @@
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://127.0.0.1:5432/test
+        username: postgres
+        password: fanxfan
+    jpa:
+        open-in-view: true
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+#            naming:
+#                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        properties:
+            hibernate:
+                #                dialect: org.hibernate.dialect.PostgreSQLDialect
+                dialect: org.hibernate.dialect.PostgresPlusDialect

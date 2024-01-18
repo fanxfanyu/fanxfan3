@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.1</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>top.fanxfan</groupId>
+    <artifactId>fanxfan-demo</artifactId>
+    <version>1.0.0</version>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.boot.version>3.2.1</spring.boot.version>
+        <druid.version>1.2.18</druid.version>
+        <hutool.version>5.8.23</hutool.version>
+        <graphql.dgs.version>4.9.16</graphql.dgs.version>
+    </properties>
+
+    <modules>
+        <module>fanxfan-mariadb</module>
+        <module>fanxfan-neo4j</module>
+        <module>fanxfan-postgresql</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.netflix.graphql.dgs</groupId>
+                <artifactId>graphql-dgs-platform-dependencies</artifactId>
+                <!-- The DGS BOM/platform dependency. This is the only place you set version of DGS -->
+                <version>${graphql.dgs.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
