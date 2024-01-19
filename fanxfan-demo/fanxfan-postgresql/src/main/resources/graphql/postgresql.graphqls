@@ -1,0 +1,12 @@
+type Query{
+    getUser(id:ID): User!
+    users(userName:String): [User]
+}
+
+type User{
+    id:ID
+    userName:String
+    mobile:String
+    sex:Int,
+    info:String
+}

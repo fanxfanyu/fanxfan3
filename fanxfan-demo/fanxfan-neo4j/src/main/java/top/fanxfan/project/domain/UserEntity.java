@@ -16,7 +16,6 @@ import java.io.Serializable;
 @Node
 @Getter
 @Setter
-@RequiredArgsConstructor
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
