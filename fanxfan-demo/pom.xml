@@ -25,12 +25,14 @@
         <druid.version>1.2.18</druid.version>
         <hutool.version>5.8.23</hutool.version>
         <graphql.dgs.version>4.9.16</graphql.dgs.version>
+        <justauth.version>1.4.0</justauth.version>
     </properties>
 
     <modules>
         <module>fanxfan-mariadb</module>
         <module>fanxfan-neo4j</module>
         <module>fanxfan-postgresql</module>
+        <module>fanxfan-justauth</module>
     </modules>
 
     <dependencyManagement>
@@ -59,6 +61,11 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xkcoding.justauth</groupId>
+                <artifactId>justauth-spring-boot-starter</artifactId>
+                <version>${justauth.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

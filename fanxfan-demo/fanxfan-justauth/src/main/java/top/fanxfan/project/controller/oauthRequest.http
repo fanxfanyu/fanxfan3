@@ -1,0 +1,12 @@
+### 认证列表
+GET http://127.0.0.1:8081/oauth
+
+
+### gitee登录
+GET http://127.0.0.1:8081/oauth/login/gitee
+
+### github登录
+GET http://127.0.0.1:8081/oauth/login/github
+
+
+

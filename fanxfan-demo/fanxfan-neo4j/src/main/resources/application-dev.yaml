@@ -3,12 +3,18 @@ spring:
         uri: neo4j://localhost:7687
         authentication:
             username: neo4j
-            password: fanxfan@1998
+            password: 123456
         connection-timeout: 30s
         max-transaction-retry-time: 30s
-
-
     data:
         neo4j:
             repositories:
                 type: auto
+    jpa:
+        open-in-view: true
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+                implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
