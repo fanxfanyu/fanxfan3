@@ -1,0 +1,13 @@
+type Query{
+    getUser(id:String):User
+    users(userName:String):[User]
+    list(userName:String,page:Int,pageSize:Int):[User]
+}
+
+type User{
+    id:ID
+    userName:String
+    mobile:String
+    sex:Int
+    info:String
+}

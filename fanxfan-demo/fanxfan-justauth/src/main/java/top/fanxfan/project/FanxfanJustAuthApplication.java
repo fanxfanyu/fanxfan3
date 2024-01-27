@@ -7,11 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Map;
 
 /**
+ * justauth demo
+ *
  * @author fanxfan
  * @date 2024/1/19 10:55
  */
 @Slf4j
-@SpringBootApplication(scanBasePackages = {"com.xkcoding.justauth","top.fanxfan.project"})
+@SpringBootApplication(scanBasePackages = {"com.xkcoding.justauth", "top.fanxfan.project"})
 public class FanxfanJustAuthApplication {
 
     public static void main(String[] args) {
