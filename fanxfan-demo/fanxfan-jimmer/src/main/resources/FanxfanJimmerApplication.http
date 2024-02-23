@@ -1,0 +1,13 @@
+###
+GET http://127.0.0.1:8081/user/1
+
+<> 2024-02-23T132433.200.json
+
+###
+GET http://127.0.0.1:8081/user/nullable/1
+
+###
+GET http://127.0.0.1:8081/user/dto/1
+
+###
+GET http://127.0.0.1:8081/user/list?page=1&size=20

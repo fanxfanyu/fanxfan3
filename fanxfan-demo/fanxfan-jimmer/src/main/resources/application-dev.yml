@@ -1,0 +1,17 @@
+server:
+    port: 8081
+
+
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: org.postgresql.Driver
+        url: jdbc:postgresql://127.0.0.1:5432/test
+        username: postgres
+        password: fanxfan
+
+jimmer:
+    dialect: org.babyfish.jimmer.sql.dialect.PostgresDialect
+    show-sql: true
+    pretty-sql: false
+    database-validation-mode: ERROR

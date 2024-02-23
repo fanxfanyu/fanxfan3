@@ -1,0 +1,17 @@
+spring:
+    redis:
+        host: 127.0.0.1
+        port: 6379
+redis:
+    util:
+        delay:
+            enable: true
+            registerService: delay
+        lock:
+            enable: true
+        mq:
+            enable: true
+        duplicate:
+            enable: true
+        limit:
+            enable: true
