@@ -5,13 +5,28 @@ server:
 spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
-        driver-class-name: org.postgresql.Driver
-        url: jdbc:postgresql://127.0.0.1:5432/test
-        username: postgres
-        password: fanxfan
+        driver-class-name: com.mysql.cj.jdbc.Driver
+#        driver-class-name: org.postgresql.Driver
+#        url: jdbc:postgresql://127.0.0.1:5432/test
+        url: jdbc:mysql://127.0.0.1:3306/test
+        username: root
+        password: 123456
+    data:
+      redis:
+        host: 127.0.0.1
+        port: 6379
+        password: 123456
+        database: 0
+        jedis:
+            pool:
+                enabled: true
+                max-active: 100
+                max-idle: 10
+                min-idle: 1
 
 jimmer:
-    dialect: org.babyfish.jimmer.sql.dialect.PostgresDialect
+#    dialect: org.babyfish.jimmer.sql.dialect.PostgresDialect
+    dialect: org.babyfish.jimmer.sql.dialect.MySqlDialect
     show-sql: true
     pretty-sql: false
     database-validation-mode: ERROR

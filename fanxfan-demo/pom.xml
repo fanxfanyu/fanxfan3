@@ -31,7 +31,7 @@
         <springdoc.openapi.webmvc.version>2.3.0</springdoc.openapi.webmvc.version>
         <redisson.version>3.23.1</redisson.version>
         <redis.util.version>1.0.0-RELEASE</redis.util.version>
-        <jimmer.version>0.8.98</jimmer.version>
+        <jimmer.version>0.9.24</jimmer.version>
     </properties>
 
     <modules>

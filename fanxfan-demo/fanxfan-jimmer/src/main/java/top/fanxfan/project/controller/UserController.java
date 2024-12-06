@@ -1,17 +1,14 @@
 package top.fanxfan.project.controller;
 
 import jakarta.annotation.Resource;
-import org.babyfish.jimmer.sql.fetcher.Fetcher;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.babyfish.jimmer.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.fanxfan.project.domain.User;
-import top.fanxfan.project.domain.UserFetcher;
-import top.fanxfan.project.repository.UserRepository;
+import top.fanxfan.project.service.UserService;
 
 import java.util.Optional;
 
@@ -25,60 +22,33 @@ import java.util.Optional;
 public class UserController {
 
     @Resource
-    private UserRepository userRepository;
+    private UserService userService;
 
     /**
-     * 简单dto
-     */
-    private final Fetcher<User> simpleFetcher = UserFetcher.$.allScalarFields().remove("info");
-
-    /**
-     * 原始获取
+     * 获取指定id用户
      *
      * @param id id
      * @return {@link  User}
      */
     @GetMapping("/{id}")
     public ResponseEntity<User> get(@PathVariable("id") Long id) {
-        Optional<User> byId =
-                userRepository.findById(id);
-        return ResponseEntity.of(byId);
-    }
-
-    /**
-     * jimmer 获取
-     *
-     * @param id id
-     * @return {@link User}
-     */
-    @GetMapping("/nullable/{id}")
-    public ResponseEntity<User> get2(@PathVariable("id") Long id) {
-        User user = userRepository.findNullable(id);
-        return ResponseEntity.of(Optional.ofNullable(user));
-    }
-
-    /**
-     * 获取返回dto
-     *
-     * @param id id
-     * @return {@link User}
-     */
-    @GetMapping("/dto/{id}")
-    public ResponseEntity<User> get3(@PathVariable("id") Long id) {
-        User user = userRepository.findNullable(id, simpleFetcher);
+        User user = userService.getUserById(id);
         return ResponseEntity.of(Optional.ofNullable(user));
     }
 
     /**
      * 分页获取
      *
-     * @param pageable 分页信息
+     * @param username 用户名
+     * @param mobile   手机号
+     * @param page     当前页
+     * @param size     每页大小
      * @return {@link Page}
      */
     @GetMapping("/list")
-    public ResponseEntity<Page<User>> list(Pageable pageable) {
-        Page<User> page = userRepository.findAll(pageable, simpleFetcher);
-        return ResponseEntity.ok(page);
+    public ResponseEntity<Page<User>> list(String username, String mobile, int page, int size) {
+        Page<User> users = userService.getUsers(username, mobile, page, size);
+        return ResponseEntity.ok(users);
     }
 
 }
